@@ -21,11 +21,13 @@ def caching_fibonacci(cache = {}):
         elif n in cache:
             return cache[n]
 
-        # рекурсивний випадок, у якому обчислюється 
+        # рекурсивний випадок, у якому обчислюється число Фібоначчі
+        # та результат запису потрапляє у словник
         else:
             cache[n] = fibonacci(n - 1) + fibonacci(n - 2)
             return cache[n]
-
+        
+    # повертається результат роботи функції fibonacci 
     return fibonacci
 
 # Отримуємо функцію fibonacci
@@ -34,13 +36,4 @@ fib = caching_fibonacci()
 print(fib(2))  
 print(fib(3))
 
-#     ФУНКЦІЯ fibonacci(n)
-#         Якщо n <= 0, повернути 0
-#         Якщо n == 1, повернути 1
-#         Якщо n у cache, повернути cache[n]
 
-#         cache[n] = fibonacci(n - 1) + fibonacci(n - 2)
-#         Повернути cache[n]
-
-#     Повернути функцію fibonacci
-# КІНЕЦЬ ФУНКЦІЇ caching_fibonacci
