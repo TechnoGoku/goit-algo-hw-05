@@ -33,7 +33,7 @@ def caching_fibonacci(cache = {}):
 # Отримуємо функцію fibonacci
 fib = caching_fibonacci()
 # Використовуємо функцію fibonacci для обчислення чисел Фібоначчі
-print(fib(2))  
-print(fib(3))
+print(fib(10))  
+print(fib(15))
 
 
