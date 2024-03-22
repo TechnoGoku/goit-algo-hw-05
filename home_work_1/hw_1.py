@@ -9,7 +9,7 @@ def caching_fibonacci(cache = {}):
         elif n == 1:
             return 0
         if n in cache:
-            return cache[n] 
+            return cache[n]
 
 
 
