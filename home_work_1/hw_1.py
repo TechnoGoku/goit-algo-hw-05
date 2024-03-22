@@ -8,7 +8,8 @@ def caching_fibonacci(cache = {}):
             return 0
         elif n == 1:
             return 0
-        if n in cache 
+        if n in cache:
+            return cache[n] 
 
 
 
