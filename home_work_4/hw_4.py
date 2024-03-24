@@ -39,8 +39,6 @@ def show_contact(args, contacts):
         return contacts[name]
     
 def all_contacts(contacts):
-    # if not contacts:
-    #     raise ValueError("No contacts available.")
     for name, phone in contacts.items():
         print(f"Name: {name}, Phone: {phone}")
     
