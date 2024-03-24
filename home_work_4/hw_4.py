@@ -1,16 +1,16 @@
-# ValueError add
-
 def input_error(func):
     def inner(*args, **kwargs):
         try:
-            return func(*args, **kwargs)
-        except ValueError:
-            return "Give me name and phone please."
+            result = func(*args, **kwargs)
+            if result is None: 
+                return "Contact not found."
+            return result
+        except KeyError:
+            return "Contact not found."
+        except ValueError as e:
+            return "Give me name and phone please"
         except IndexError:
-            return "Give me name please."
-        except:
-            pass
-
+            return "Enter the argument for the command."
     return inner
 
 def parse_input(user_input):
@@ -39,8 +39,11 @@ def show_contact(args, contacts):
         return contacts[name]
     
 def all_contacts(contacts):
+    # if not contacts:
+    #     raise ValueError("No contacts available.")
     for name, phone in contacts.items():
-            print(f"Name: {name}, Phone: {phone}")
+        print(f"Name: {name}, Phone: {phone}")
+    
 
 def main():
     contacts = {}
@@ -61,7 +64,7 @@ def main():
         elif command == "show":
             print(show_contact(args, contacts))   
         elif command == "all": 
-            print(all_contacts(contacts))                
+            all_contacts(contacts)             
         else:
             print("Invalid command.")
 
